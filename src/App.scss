@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    background-color : #070709;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+.main{
+    display: flex;
+    height: 100vh;
+    // margin-top: -100px;
+    // padding-top: 50px;
+    // padding-bottom: 50px;
+    overflow-y: scroll;
+}
+
+.flex{
+    display: flex;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.mr-auto{
+    margin-right: auto;
+}
+
+.ml-auto{
+    margin-left: auto;
+}
+
+.mt-auto{
+    margin-top: auto;
+}
+
+.mb-auto{
+    margin-bottom: auto;
+}
+
+@for $i from 1 to 6 {
+    $i: $i*10;
+    .mt-#{$i} {
+        margin-top: $i+px;
+    }
+    .mb-#{$i}{
+        margin-bottom: $i+px;
+    }
+    .mr-#{$i}{
+        margin-right: $i+px;
+    }
+    .ml-#{$i}{
+        margin-left: $i+px;
+    }
+}
+
+
+.btn{
+    line-height: 1.3;
+    position: relative;
+    background-image: none;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    user-select: none;
+    touch-action: manipulation;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: solid 1px #d9d9d9;
+    padding: 0 15px;
+    min-height: 36px;
+    height: auto;
+    font-size: 14px;
+    // line-height: 34px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border-color: #d9d9d9;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    padding: 15px;
+    border-radius: 5px;
+}
+
+
+
+/* Scrollbar css */
+
+body::-webkit-scrollbar, 
+div::-webkit-scrollbar {
+    width: 6px;
+    height: 5px;
+}
+
+body::-webkit-scrollbar-track,
+div::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb {
+    background-color: #c5c5c5;
+    outline: 1px solid #c5c5c5;
+    border-radius: 20px;
+}

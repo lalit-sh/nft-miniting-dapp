@@ -1,0 +1,26 @@
+$colours: (
+    primary: #fff,
+    secondary: rgb(110, 74, 185),
+    header-background: #5A46BF,
+    header-text: #fff,
+    loader: wheat,
+    lp-background: #070709,
+    button-background: linear-gradient(to right, #03C8A8 0%, #70B2D9 100%),
+    logo-background: linear-gradient(to right, #03C8A8 0%, #70B2D9 100%)
+);
+
+@function clr($name) {
+    $color: map-get($colours, $name);
+    @return $color;
+}
+
+@each $color,
+$value in $colours {
+    .#{$color}Color {
+        color: clr($color)
+    }
+
+    :root {
+        --#{$color}Color: #{$value}
+    }
+}

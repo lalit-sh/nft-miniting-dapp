@@ -1,0 +1,12 @@
+@import "../../config/color.scss";
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,700&display=swap');
+
+.brand-logo{
+    font-size: 28px;
+    background: clr("logo-background");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: italic;
+}
