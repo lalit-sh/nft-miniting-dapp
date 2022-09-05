@@ -2,7 +2,7 @@
 export const CONTRACT_ADDRESS = "0x153615Ff76414F0E9Abfda8Be2DA6bA8a7137868";
 export const SCAN_LINK = "https://polygonscan.com/token/0x153615Ff76414F0E9Abfda8Be2DA6bA8a7137868";
 export const NETWORK = {
-    "NAME": "BSC",
+    "NAME": "BNB",
     "SYMBOL": "BNB",
     "ID": 97
 };

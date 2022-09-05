@@ -16,6 +16,7 @@ import ConnectButton from './components/ConnectButton/ConnectButton';
 import Notification from './components/Notification';
 import './App.scss';
 import { clearFlashMessage } from "./redux/flashMessage/flashMessage.action";
+import MintModal from "./components/MintModal/MintModal";
 
 
 const App = () => {
@@ -66,7 +67,6 @@ const App = () => {
         setNotification(flashMessage);
     }, [flashMessage])
 
-    const MintBtn = (connected && account) && <MintButton /> || <ConnectButton />
     return (
         <StyledContainer>
             <TopBar />
@@ -75,19 +75,30 @@ const App = () => {
                     <StyledSection className='left'>
                         <img 
                             src={"/images/nft.gif"} 
-                            width={350} 
-                            height={350} 
-                            style={{borderRadius: 10}}
+                            width={"100%"} 
+                            height={"100%"} 
+                            style={{borderRadius: 10, maxHeight: 350, maxWidth: 350}}
                         />
                     </StyledSection>
                     <StyledSection className='right'>
-                        <StyleTitle>
+                        {/* <StyleTitle>
                             Get Skulls with
-                        </StyleTitle>
+                        </StyleTitle> */}
                         <StyleTitleLogo>
                             {NFT_NAME}
                         </StyleTitleLogo>
-                        {MintBtn}
+                        {(connected && account) ? 
+                            <MintModal /> 
+                            : <ConnectButton />
+                        }
+                    </StyledSection>
+                    <StyledSection className='mob-bottom'>
+                        <img 
+                            src={"/images/nft.gif"} 
+                            width={"100%"} 
+                            height={"100%"} 
+                            style={{borderRadius: 10, maxHeight: 350, maxWidth: 350}}
+                        />
                     </StyledSection>
                 </div>
             </AnimatedBackground>

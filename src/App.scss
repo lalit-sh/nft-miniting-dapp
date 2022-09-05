@@ -15,10 +15,27 @@ h1,h2,h3,h4,h5,h6{
 .main{
     display: flex;
     height: 100vh;
-    // margin-top: -100px;
-    // padding-top: 50px;
-    // padding-bottom: 50px;
+    padding-top: 100px;
     overflow-y: scroll;
+    @media (max-width: 767px){
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 767px){
+    .mob-bottom{
+        display: none !important;
+    }
+}
+
+/*  XS */
+@media (max-width: 767px){
+    .left{
+        display: none !important;
+    }
+    .mob-bottom{
+        margin-top: 30px;
+    }
 }
 
 .flex{

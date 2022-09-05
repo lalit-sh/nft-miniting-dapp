@@ -13,6 +13,7 @@ import BigNumber from "bignumber.js";
 const MintModal = ({
     isOpen = false,
     onToggle,
+    isModal = false
 }) => {
     const d = useDispatch();
     const [count, setCount] = useState(1);
@@ -52,6 +53,34 @@ const MintModal = ({
             });
     };
 
+    const MintFunction = (
+        <div className='mint-nft'>
+            <StyleTitle className='mb-30'>
+                Mint Now
+            </StyleTitle>
+            <StyledSection className='co mb-30'>
+                <button className="sub-btn" onClick={() => setCount(count - 1 || 1)}>
+                    -
+                </button>
+                <span className='count'>{count}</span>
+                <button className='sub-btn' onClick={() => (count <= 4 && setCount(count + 1))}>
+                    +
+                </button>
+            </StyledSection>
+            <StyledButton className='mb-10' onClick={claimNFTs}>
+                {claimingNft && <Spinner containerWidth={"100%"} containerHeight={"100%"} /> ||
+                    `Mint for ${Number(count * DISPLAY_COST).toFixed(2)} ${NETWORK.NAME}`
+                }
+            </StyledButton>
+            <StyledSection>
+                {totalSupply} / {MAX_SUPPLY}
+            </StyledSection>
+        </div>
+    )
+
+    if(isModal === false){
+        return MintFunction;
+    }
 
     return (
         <Modal
@@ -62,26 +91,6 @@ const MintModal = ({
         >
             <ModalBody>
                 <span className='close' onClick={() => onToggle(false)}>x</span>
-                <StyleTitle className='mb-30'>
-                    Mint Now
-                </StyleTitle>
-                <StyledSection className='co mb-30'>
-                    <button className="sub-btn" onClick={() => setCount(count - 1 || 1)}>
-                        -
-                    </button>
-                    <span className='count'>{count}</span>
-                    <button className='sub-btn' onClick={() => (count <= 4 && setCount(count + 1))}>
-                        +
-                    </button>
-                </StyledSection>
-                <StyledButton className='mb-10' onClick={claimNFTs}>
-                    {claimingNft && <Spinner containerWidth={"100%"} containerHeight={"100%"} /> ||
-                        `Mint for ${count * DISPLAY_COST} ${NETWORK.NAME}`
-                    }
-                </StyledButton>
-                <StyledSection>
-                    {totalSupply} / {MAX_SUPPLY}
-                </StyledSection>
             </ModalBody>
         </Modal>
     )

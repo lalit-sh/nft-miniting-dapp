@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledButton = styled("button")`
-    height: 48px;
+    min-height: 48px;
     align-items: center;
     border-radius: 4px;
     box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
@@ -28,6 +28,9 @@ export const StyledButton = styled("button")`
     :hover{
         background-position : 100% 0;
     }
+    @media (max-width: 767px){
+        min-width: 100px;
+    }
 `;
 
 
@@ -38,7 +41,7 @@ export const StyleTitle = styled("h1")`
 `;
 
 export const StyleTitleLogo = styled("h1")`
-    font-size: 48px;
+    font-size: 36px;
     margin-bottom: 30px;
     background: var(--logo-backgroundColor);
     -webkit-background-clip: text;
@@ -46,6 +49,12 @@ export const StyleTitleLogo = styled("h1")`
     font-weight: 700;
     font-family: 'Josefin Sans', sans-serif;
     font-style: italic;
+    text-align: center;
+    /* LG and up*/
+    @media (max-width: 992px){
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
 `;
 
 export const StyledSection = styled('section')`
@@ -55,6 +64,12 @@ export const StyledSection = styled('section')`
     flex-flow: column;
     width: 50%;
     height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    @media (max-width: 767px){
+        width: 100%;
+        margin-bottom: 30px;
+    }
 `
 
 export const StyledContainer = styled('div')`
